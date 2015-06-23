@@ -59,7 +59,8 @@ public class ConcurrentDavRequestTest extends JerseyTest {
     private static final String CELL_NAME = "testcell1";
     private static final String COL_NAME = "colForConcurrencyTest";
     private static final String FILE_NAME = "fileForConcurrencyTest.txt";
-    private static final String FILE_BODY = "fileBodyForConcurrencyTest";
+    private static final String FILE_BODY = "fileBodyForConcurrencyTest"
+      + "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt";
     private static final int NUM_CONCURRENCY = 10;
 
     /** ログオブジェクト. */
@@ -153,13 +154,6 @@ public class ConcurrentDavRequestTest extends JerseyTest {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        Thread.sleep(5000); //Webコンテナの準備ができるまで待ち合わせ
-                    } catch (Exception e) {
-                        log.debug("Thread sleep failed.", e.getCause());
-                        fail();
-                    }
-
                     // リクエストを発行
                     TResponse resp = theReq.returns();
                     log.debug("Status Code = " + resp.getStatusCode());
@@ -216,13 +210,6 @@ public class ConcurrentDavRequestTest extends JerseyTest {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        Thread.sleep(5000); //Webコンテナの準備ができるまで待ち合わせ
-                    } catch (Exception e) {
-                        log.debug("Thread sleep failed.", e.getCause());
-                        fail();
-                    }
-
                     // リクエストを発行
                     TResponse resp = theReq.returns();
                     log.debug("Status Code = " + resp.getStatusCode());
