@@ -59,8 +59,7 @@ public class ConcurrentDavRequestTest extends JerseyTest {
     private static final String CELL_NAME = "testcell1";
     private static final String COL_NAME = "colForConcurrencyTest";
     private static final String FILE_NAME = "fileForConcurrencyTest.txt";
-    private static final String FILE_BODY = "fileBodyForConcurrencyTest"
-      + "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt";
+    private static final String FILE_BODY = "fileBodyForConcurrencyTest";
     private static final int NUM_CONCURRENCY = 10;
 
     /** ログオブジェクト. */
