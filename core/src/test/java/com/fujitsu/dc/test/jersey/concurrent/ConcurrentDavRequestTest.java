@@ -153,6 +153,8 @@ public class ConcurrentDavRequestTest extends JerseyTest {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
+                    Thread.sleep(1000); //Webコンテナの準備ができるまで待ち合わせ
+
                     // リクエストを発行
                     TResponse resp = theReq.returns();
                     log.debug("Status Code = " + resp.getStatusCode());
@@ -169,8 +171,6 @@ public class ConcurrentDavRequestTest extends JerseyTest {
             Thread t = new Thread(runnable);
             listThread.add(t);
         }
-
-        Thread.sleep(1000); //Webコンテナの準備ができるまで待ち合わせ
 
         try {
             // 全部走らせてから
