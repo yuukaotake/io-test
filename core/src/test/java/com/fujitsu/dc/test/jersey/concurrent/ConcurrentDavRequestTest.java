@@ -154,7 +154,7 @@ public class ConcurrentDavRequestTest extends JerseyTest {
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep(1000); //Webコンテナの準備ができるまで待ち合わせ
+                        Thread.sleep(5000); //Webコンテナの準備ができるまで待ち合わせ
                     } catch (Exception e) {
                         log.debug("Thread sleep failed.", e.getCause());
                         fail();
@@ -217,7 +217,7 @@ public class ConcurrentDavRequestTest extends JerseyTest {
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep(1000); //Webコンテナの準備ができるまで待ち合わせ
+                        Thread.sleep(5000); //Webコンテナの準備ができるまで待ち合わせ
                     } catch (Exception e) {
                         log.debug("Thread sleep failed.", e.getCause());
                         fail();
