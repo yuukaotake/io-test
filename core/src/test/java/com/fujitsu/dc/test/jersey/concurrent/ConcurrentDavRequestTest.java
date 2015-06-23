@@ -16,11 +16,6 @@
  */
 package com.fujitsu.dc.test.jersey.concurrent;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +42,13 @@ import com.fujitsu.dc.test.utils.CellUtils;
 import com.fujitsu.dc.test.utils.DavResourceUtils;
 import com.fujitsu.dc.test.utils.Http;
 import com.fujitsu.dc.test.utils.TResponse;
+import com.sun.jersey.test.framework.JerseyTest;
+import com.sun.jersey.test.framework.WebAppDescriptor;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Dav系APIへの同時リクエストテスト.
