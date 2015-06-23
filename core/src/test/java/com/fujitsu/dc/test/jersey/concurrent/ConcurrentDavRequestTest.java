@@ -146,6 +146,9 @@ public class ConcurrentDavRequestTest extends JerseyTest {
         // カウンタを準備
         final Counters counters = new Counters();
 
+        // 前準備のため一回dummynのリクエストを投入
+        CellUtils.list(AbstractCase.MASTER_TOKEN_NAME, HttpStatus.SC_OK);
+
         // 同時リクエスト用スレッドの準備
         List<Thread> listThread = new ArrayList<Thread>();
         for (int i = 0; i < NUM_CONCURRENCY; i++) {
@@ -201,6 +204,9 @@ public class ConcurrentDavRequestTest extends JerseyTest {
     public final void 同一名称ファイル同時作成がすべて成功する() throws InterruptedException {
         // カウンタを準備
         final Counters counters = new Counters();
+
+        // 前準備のため一回dummynのリクエストを投入
+        CellUtils.list(AbstractCase.MASTER_TOKEN_NAME, HttpStatus.SC_OK);
 
         // 同時リクエスト用スレッドの準備
         List<Thread> listThread = new ArrayList<Thread>();
