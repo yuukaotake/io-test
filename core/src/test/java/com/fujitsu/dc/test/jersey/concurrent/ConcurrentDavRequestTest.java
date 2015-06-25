@@ -1093,7 +1093,7 @@ public class ConcurrentDavRequestTest extends JerseyTest {
                 log.debug(String.format("delete %d: %d", respCode, deleteCounters.get(respCode)));
                 total += deleteCounters.get(respCode);
                 if (HttpStatus.SC_NO_CONTENT == respCode || HttpStatus.SC_NOT_FOUND == respCode
-                        || HttpStatus.SC_FORBIDDEN == respCode) {
+                        || HttpStatus.SC_FORBIDDEN == respCode || HttpStatus.SC_CONFLICT == respCode) {
                     assertTrue(0 < deleteCounters.get(respCode));
                 } else if (HttpStatus.SC_SERVICE_UNAVAILABLE != respCode) {
                     fail(String.format("delete request failed: respcode=%d, count:%d",
