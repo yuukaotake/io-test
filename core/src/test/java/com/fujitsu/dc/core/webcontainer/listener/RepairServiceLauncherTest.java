@@ -41,8 +41,9 @@ public class RepairServiceLauncherTest {
      * ExecutorServiceの起動_終了テスト.
      */
     @Test
-    public void ExecutorServiceの起動_終了テスト() {
+    public void ExecutorServiceの起動_終了テスト() throws InterruptedException {
         RepairServiceLauncher launcher = new RepairServiceLauncher();
+        Thread.sleep(1000);
         assertThat(launcher.executor.getPoolSize(), is(1));
         assertThat(launcher.executor.getTaskCount(), is(1L));
 
